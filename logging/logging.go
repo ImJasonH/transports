@@ -1,3 +1,5 @@
+// Package logging provides an http.RoundTripper that logs all requests it
+// makes.
 package logging
 
 import (
@@ -5,6 +7,7 @@ import (
 	"net/http"
 )
 
+// NewTransport returns a RoundTripper that logs all requests it makes.
 func NewTransport(t http.RoundTripper) http.RoundTripper {
 	return loggingTransport{t}
 }
